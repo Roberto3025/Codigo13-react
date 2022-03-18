@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header"
+import Footer from "./Footer"
+// import Form from "./Form";
+import Form from './FormUser'
 
-function App() {
+// Paso 1 importar useState
+import { useState } from "react";
+
+const PrimerComponente = () => {
+  // crear una variable y mostrarla en react
+  const edad = 99;
+
+  const [count, setCount] = useState(0);
+
+  // otra forma es usar Use style
+  // Permite manejar el estado de una variable
+
+  const sumar = () => setCount(count + 1);
+
+  const restar = () => {
+    setCount(count - 1)
+  };
+
+  const Parametros = (n1, n2) => {
+    setCount(n1 + n2);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header></Header>
+      <h1>Hola Mundo</h1>
+      <div>
+        <h4>Sumar o restar desde el componente {count}</h4>
+        <button onClick={sumar}>Sumar</button>
+        <button onClick={restar}>Restar</button>
+        <button onClick={()=>Parametros(10,20)}>Restar</button>
+      </div>
+      <hr></hr>
+      {/* <Form></Form> */}
+      <Form></Form>
+      <Footer></Footer>
     </div>
   );
-}
+};
 
-export default App;
+// Exportamos el componente
+export default PrimerComponente;
