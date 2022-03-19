@@ -13,13 +13,14 @@ import reportWebVitals from './reportWebVitals';
 
 // No hace falta llamar al index porque por default la carpeta
 // que se importa es el index
-import Home from "./pages/Home"
+// import Home from "./pages/Home"
+import App from "./App"
 
 ReactDOM.render(
   <React.StrictMode>
     {/* Para usar un componente debo usarlo como si fuera una etiqueta de HTML */}
     {/* <PrimerComponente/> */}
-    <Home></Home>
+    <App/>
   </React.StrictMode>,
   document.getElementById('root')
 );
